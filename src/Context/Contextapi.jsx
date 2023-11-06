@@ -5,7 +5,6 @@ import MirrorApis from "../Components/ProductApi";
 const AppContext = createContext();
 let initialState = {
     ShoppingcartDetails: [],
-    OrderDetails: [{}],
     totalPrice: 0,
     qty: 0,
 }
@@ -32,7 +31,7 @@ const AppPorvider = ({ children }) => {
     }, [AddCartList])
 
     return (
-        <AppContext.Provider value={{ AllMirror, dispatch, AddCartList, setMirror }}>
+        <AppContext.Provider value={{ AllMirror, dispatch,AddCartList, setMirror }}>
             {children}
         </AppContext.Provider>
     )
