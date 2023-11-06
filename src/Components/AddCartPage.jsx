@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { LiaRupeeSignSolid } from "react-icons/lia"
 import { IoBagRemove } from "react-icons/io5"
 import { MdRemoveShoppingCart } from 'react-icons/md'
@@ -55,13 +55,13 @@ const AddCartPage = () => {
                     <AiOutlineArrowLeft className='continueArrow' />
                     <h1>Continue Shopping</h1>
                 </div></Link>
-                {ShoppingcartDetails.length === 0 ?
+                {ShoppingcartDetails?.length === 0 ?
                     (<div>
                         <img src='https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-2130356-1800917.png' />
                     </div>)
                     :
                     (<div id='Addcart' className='flex justify-center items-center flex-col  p-5 '>
-                        {ShoppingcartDetails.map((cardList) => {
+                        {ShoppingcartDetails?.map((cardList) => {
                             return (
                                 <div key={cardList.id}>
                                     <div id='Addlist' className='flex gap-10 justify-center items-start flex-wrap my-4'>

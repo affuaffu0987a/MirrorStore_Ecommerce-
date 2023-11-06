@@ -6,7 +6,7 @@ const reducer = (state, action) => {
     let index;
     switch (action.type) {
         case "ADD_CART":
-            let check = ShoppingcartDetails.find(elem => action.payload.id === elem.id)
+            let check = ShoppingcartDetails?.find(elem => action.payload.id === elem.id)
             if (check) {
                 return state
             }
