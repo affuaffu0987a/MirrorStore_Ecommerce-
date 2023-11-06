@@ -6,8 +6,7 @@ import { RxCross1 } from 'react-icons/rx'
 
 const Navbar = () => {
   const [isHamburger, setisHamburger] = useState(false)
-
-  const { AddCartList } = useGlobalContext()
+  const {qty} = useGlobalContext()
   return (
     <>
       <nav id='navbar' className='flex justify-between items-center p-7 h-9 shadow-sm fixed w-full top-0  z-50'>
@@ -32,7 +31,7 @@ const Navbar = () => {
           <li><NavLink to='/contact'>Contact</NavLink></li>
           <li><NavLink to="/about">About Us</NavLink></li>
         </ul>
-        <Link to='/addCartpage'><div className='Addcartimg w-12 relative'><img className='addImg w-full ' src='./contentImg/addcart2.png' alt='AddCart' /><p className='addCount absolute  text-green-500 '>{AddCartList.qty}</p></div></Link>
+        <Link to='/addCartpage'><div className='Addcartimg w-12 relative'><img className='addImg w-full ' src='./contentImg/addcart2.png' alt='AddCart' /><p className='addCount absolute  text-green-500 '>{qty}</p></div></Link>
       </nav>
       <Outlet />
     </>

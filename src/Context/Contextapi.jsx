@@ -31,7 +31,7 @@ const AppPorvider = ({ children }) => {
     }, [AddCartList])
 
     return (
-        <AppContext.Provider value={{ AllMirror, dispatch,AddCartList, setMirror }}>
+        <AppContext.Provider value={{ AllMirror, dispatch, setMirror,...AddCartList}}>
             {children}
         </AppContext.Provider>
     )

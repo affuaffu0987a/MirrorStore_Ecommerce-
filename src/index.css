@@ -254,11 +254,6 @@ svg {
   position: absolute;
 }
 
-/* #Addcart::-webkit-scrollbar{
-  display: none;
-} */
-
-
 .Addcart_list {
   height: 85vh;
 }
@@ -383,7 +378,7 @@ textarea {
 /* ...............About Page................... */
 
 .aboutpage {
-  min-height: 100vh;
+  min-height: 50vh;
   /* width: 100vw; */
 }
 
@@ -540,9 +535,6 @@ textarea {
     font-size: 2rem;
   }
 
-  /* #homeBg{
-    margin-top: 1rem;
-  } */
   /* .............footer page................. */
 
   .footer-content {
@@ -577,7 +569,7 @@ textarea {
   /* ...................About page............... */
 
   .popup2 {
-    top: 10px;
+    top: 5px;
     animation: popupBg2 linear infinite alternate 2s;
     mix-blend-mode: multiply;
   }
@@ -593,21 +585,13 @@ textarea {
     }
 
     100% {
-      width: 150px;
-      height: 150px;
+      width: 130px;
+      height: 130px;
       border-radius: 142px;
       background: var(--light-white);
       box-shadow: 6px 6px 11px var(--light_Pink),
         -24px -24px 47px #ffffff;
     }
-  }
-
-  /* .aboutpage {
-    margin-top: 2.25rem;
-  } */
-
-  .animatedBg {
-    height: 100%;
   }
 
   .aboutText {
@@ -644,6 +628,7 @@ textarea {
 
 @media(max-width:1026px) {
 
+
   /* ............AddCart page............ */
 
   .ContinueShopping {
@@ -675,5 +660,11 @@ textarea {
     width: 100vw;
     background-color: var(--light_Pink);
     padding: 10px 0px;
+  }
+}
+
+@media(max-width:2120px){
+  .animatedBg {
+    height: 100%;
   }
 }

@@ -10,8 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddCartPage = () => {
-    const { AddCartList, dispatch } = useGlobalContext()
-
+    const {ShoppingcartDetails,totalPrice,qty,dispatch} = useGlobalContext()
     const Removed = (cardList) => {
         toast.warn('Item removed !', {
             position: "top-center",
@@ -56,13 +55,13 @@ const AddCartPage = () => {
                     <AiOutlineArrowLeft className='continueArrow' />
                     <h1>Continue Shopping</h1>
                 </div></Link>
-                {AddCartList.ShoppingcartDetails.length === 0 ?
+                {ShoppingcartDetails.length === 0 ?
                     (<div>
                         <img src='https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-2130356-1800917.png' />
                     </div>)
                     :
                     (<div id='Addcart' className='flex justify-center items-center flex-col  p-5 '>
-                        {AddCartList.ShoppingcartDetails.map((cardList) => {
+                        {ShoppingcartDetails.map((cardList) => {
                             return (
                                 <div key={cardList.id}>
                                     <div id='Addlist' className='flex gap-10 justify-center items-start flex-wrap my-4'>
@@ -108,8 +107,8 @@ const AddCartPage = () => {
                             )
                         })}
                         <div className='AllTotal flex justify-around w-full m-auto my-5 items-center bg-white p-2 '>
-                            <h1>TotalPrice: {AddCartList.totalPrice}</h1>
-                            <h1>Total-Items: {AddCartList.qty}</h1>
+                            <h1>TotalPrice: {totalPrice}</h1>
+                            <h1>Total-Items: {qty}</h1>
                             <button className='' onClick={() => dispatch({ type: "REMOVE_ALL" })} ><MdRemoveShoppingCart className='RemoveAll' /></button>
                         </div>
                         <StripeCheckout
@@ -118,7 +117,7 @@ const AddCartPage = () => {
                             token={PaymentHandle}
                             billingAddress
                             shippingAddress
-                            amount={AddCartList.totalPrice * 100}
+                            amount={totalPrice * 100}
                             name='MirrorStore'
                             currency="INR"
                             description='Secure Payment'

@@ -9,12 +9,12 @@ const About = () => {
 
   return (
     <>
-      <div className='aboutpage flex'>
+      <div className='aboutpage flex flex-col'>
         <div className='aboutContent flex  items-center justify-evenly px-10 gap-4 relative bg-red-300'>
           <div className='animatedBg absolute top-0'></div>
-          <div className='aboutText w-1/2 p-6 relative z-40'>
+          <div className='aboutText w-1/2 p-6 relative z-40 mt-20'>
             <div className='popup absolute top-0'></div>
-            <h1 className='text-6xl mb-4 inline-block'>Who We <span>Are...?</span></h1>
+            <h1 className='text-6xl mb-1 inline-block'>Who We <span>Are...?</span></h1>
             <p className='text-xl '>Welcome to Mirror<span>Store,</span> where innovation meets elegance!</p>
             <p className='opacity-50  '> We specialize in creating stunning LED wall mirrors that not only illuminate your space but also reflect your unique style.
               {Readmore ? "Our mirrors are designed to seamlessly blend functionality and aesthetics, transforming any room into a captivating and inviting environment.Whether you're looking to add a touch of glamour to your home, enhance your bathroom, or elevate your salon or retail space,our LED wall mirrors are the perfect choice. Experience the perfect blend of form and function with MirrorStore, your source for exceptional LED wall mirrors." : null}</p>
@@ -32,8 +32,8 @@ const About = () => {
             <img src='./contentImg/manMirror.png' alt='aboutUs' className='w-full' />
           </div>
         </div>
+        <Testimonials />
       </div>
-      <Testimonials />
       <Footer />
     </>
   )

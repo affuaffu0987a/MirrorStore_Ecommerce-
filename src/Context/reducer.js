@@ -1,12 +1,12 @@
 const reducer = (state, action) => {
-    const { ShoppingcartDetails, totalPrice, qty } = state
+    const { totalPrice, qty,ShoppingcartDetails } = state
     let products;
     let updateQty;
     let upadteprice;
     let index;
     switch (action.type) {
         case "ADD_CART":
-            let check = ShoppingcartDetails.find((elem) => action.payload.id === elem.id)
+            let check = ShoppingcartDetails.find(elem => action.payload.id === elem.id)
             if (check) {
                 return state
             }
@@ -23,7 +23,7 @@ const reducer = (state, action) => {
             }
             break;
         case "ROMOVE_PRODUCT":
-            let filtered = ShoppingcartDetails.filter((elems) => elems.id !== action.payload.id)
+            let filtered = ShoppingcartDetails.filter(elems => elems.id !== action.payload.id)
             products = action.payload.cardList;
             updateQty = qty - products.qty;
             upadteprice = totalPrice - products.Price * products.qty;
@@ -38,7 +38,7 @@ const reducer = (state, action) => {
             products.qty = products.qty + 1;
             upadteprice = totalPrice + products.Price;
             updateQty = qty + 1;
-            index = ShoppingcartDetails.findIndex((card) => card.id === action.payload.id)
+            index = ShoppingcartDetails.findIndex(card => card.id === action.payload.id)
             ShoppingcartDetails[index] = products;
             return {
                 ShoppingcartDetails: [...ShoppingcartDetails],
@@ -51,7 +51,7 @@ const reducer = (state, action) => {
             products.qty = products.qty - 1;
             upadteprice = totalPrice - products.Price;
             updateQty = qty - 1;
-            index = ShoppingcartDetails.findIndex((card) => card.id === action.payload.id)
+            index = ShoppingcartDetails.findIndex(card => card.id === action.payload.id)
             ShoppingcartDetails[index] = products;
             return {
                 ShoppingcartDetails: [...ShoppingcartDetails],
